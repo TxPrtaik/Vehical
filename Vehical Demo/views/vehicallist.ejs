@@ -1,0 +1,33 @@
+<%-include('header.ejs')%>
+<section class="container mt-5">
+    <table class="table table-dark text-center table-striped">
+        <tr>
+            <td>Action</td>
+            <td>Sr.NO</td>
+            <td>Vehical No</td>
+            <td>Vehical Type</td>
+            <td>Vehical Owner</td>
+            <td>Owner Number</td>
+            <td>Total Travel</td>
+        </tr>
+        <%for(let i=0;i<vehical.length;i++){%>
+            <tr>
+                <td>
+                    <a href="/trip/<%-vehical[i].id%>" class="btn btn-primary btn-sm">Create Trip</a>
+                    <a href="/trip-info/<%-vehical[i].id%>" class="btn btn-info btn-sm text-light">Trip Info</a>
+                </td>
+                <td><%-i+1%></td>
+                <td><%-vehical[i].number%></td>
+                <td><%-vehical[i].type%></td>
+                <td><%-vehical[i].owner_name%></td>
+                <td><%-vehical[i].owner_number%></td>
+                <%if(vehical[i].total_distance==null){%>
+                    <td>0 Km</td>
+                    <%}else{%>
+                <td><%-vehical[i].total_distance%> Km</td>
+                <%}%>
+            </tr>
+            <%}%>
+    </table>
+</section>
+<%-include('footer.ejs')%>

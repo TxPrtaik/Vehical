@@ -1,0 +1,31 @@
+<%-include('header.ejs')%>
+<div class="container bg-light shadow rounded p-4 mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Add Vehical</h3>
+        </div>
+        <div class="col-md-6 mt-3">
+            <form action="/save-vehical" method="post">
+            <label class="mb-1">Vehical Number </label>
+         <input type="text" name="number" required class="form-control mb-3"> 
+        </div>
+        <div class="col-md-6 mt-3">
+            <label class="mb-1">Vehical Type </label>
+         <input type="text" name="type" required class="form-control mb-3"> 
+        </div>
+
+        <div class="col-md-6 mt-3">
+            <label class="mb-1">Owner Name</label>
+         <input type="text" name="owner_name" required class="form-control mb-3"> 
+        </div>
+        <div class="col-md-6 mt-3">
+            <label class="mb-1">Owner Number</label>
+         <input type="number" name="owner_number" required class="form-control mb-3"> 
+        </div>
+        <div class="col-md-12 text-center mt-3">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        </div>
+    </div>
+</div>
+<%-include('footer.ejs')%>
